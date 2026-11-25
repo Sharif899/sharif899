@@ -1,4 +1,4 @@
-# Hi, I'm Olabode Sharif 👋
+# Hi, I'm Sherif Olabode 👋
 
 **Senior AI Evaluator & Trainer | LLM Evaluation, RLHF & QA | Software Engineer | Ph.D., Data Science**
 
