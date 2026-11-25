@@ -49,29 +49,29 @@ Offline, deterministic, rubric-based LLM evaluation — the workflow I use as an
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 3. [kyc-onboarding-service](https://github.com/Sharif899/kyc-onboarding-service)
-
-Identity verification & KYC onboarding service in Java and Spring Boot — the Seamfix stack in code. Document validation for NIN, passport and driver's licence, duplicate detection, idempotent requests, a verification workflow (PENDING → UNDER_REVIEW → VERIFIED / REJECTED / NEEDS_MORE_INFO) with a full audit log, and document numbers masked to the last 4 digits in every response and log line. 54 passing tests, verified with a live smoke test.
-
-**Tech:** Java 21, Spring Boot 3, Spring Data JPA, H2, JUnit 5, MockMvc, GitHub Actions
-
-### 4. [ai-safety-red-teaming](https://github.com/Sharif899/ai-safety-red-teaming)
+### 3. [ai-safety-red-teaming](https://github.com/Sharif899/ai-safety-red-teaming)
 
 Offline, deterministic AI safety red-teaming toolkit — adversarial testing for LLMs, in code. Ten attack techniques (role-play, instruction override, authority and hypothetical framing, multi-step escalation, leetspeak / base64 / reversed encoding, refusal suppression), refusal classification (refusal / partial compliance / compliance), unsafe-output detection across six harm categories, and attack success rate plus a consistency score showing whether a model refused the same request every way or let one variant through. Includes a mock target model and a harness to score a real model's recorded outputs. On the example data: 50% attack success rate, 0% consistency — direct requests refused every time, role-play and encoding attacks succeeding every time. 82 passing tests.
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 5. [annotation-qa-toolkit](https://github.com/Sharif899/annotation-qa-toolkit)
+### 4. [annotation-qa-toolkit](https://github.com/Sharif899/annotation-qa-toolkit)
 
 Annotation QA for image and video labelling — the review work I do as an Annotation QA Reviewer, in code. Reads COCO, YOLO, Pascal VOC, Labelbox, SuperAnnotate and Roboflow exports into one model; runs ten QA checks (out-of-bounds and degenerate boxes, duplicates, heavy overlap, tiny boxes, empty annotations, unknown and near-duplicate class names, rare classes, orphan annotations); measures agreement between two annotators with Cohen's kappa and IoU-based box matching; and scores every image for quality. On the example data: 7 findings on one annotator's set, kappa 0.886 between the two annotators, box match rate 0.833. 88 passing tests.
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 6. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
+### 5. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
 
 LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas) — the client work, in code. Loads evaluation datasets from CSV or JSONL with strict validation, runs them against a configurable LLM API (keys from the environment only), and scores every response 1–5 on factual accuracy, relevance, instruction following, citation quality and safety, each with a rationale citing the evidence. Citation quality is checked against the actual source documents, so invented citations and unsupported claims are penalised. Compares two model or prompt versions with per-category deltas and item-level improvements and regressions, flags low-confidence results into a persisted human review queue, and exports Markdown and JSON reports. Ships with a CLI and a web UI over the same code paths, a 28-item sample dataset against a 10-document knowledge base, and a design report covering the scoring model, the honest limits of automated judging, and a ten-step production-hardening plan. On the sample data: the candidate model scores 4.45 against a 5.00 baseline, a 42.9-point pass-rate drop concentrated in safety and citation, with 12 regressions and none improved. 123 passing tests.
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
+
+### 6. [spark-mlflow-eval-pipeline](https://github.com/Sharif899/spark-mlflow-eval-pipeline)
+
+Evaluation at distributed scale — the Spark and MLflow pipeline, in code. The same deterministic scorer (rubrics 1–5, factual checks including entity substitution and Yoruba number words, safety, pairwise comparison, Cohen's kappa, calibration) runs as pure Python, as a PySpark job over mapPartitions for large datasets, and with MLflow tracking for run comparison. On the example data: model-a averages 3.885 against model-b's 3.52, with model-b winning only on instruction following. 87 passing tests, CI green.
+
+**Tech:** Python, PySpark, MLflow, pandas, pytest, CLI
 
 ---
 
