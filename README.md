@@ -67,11 +67,11 @@ Annotation QA for image and video labelling — the review work I do as an Annot
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 6. [ml-evaluation-toolkit](https://github.com/Sharif899/ml-evaluation-toolkit)
+### 6. [sql-eval-analytics](https://github.com/Sharif899/sql-eval-analytics)
 
-Machine-learning evaluation over saved predictions — the PhD-area work, in code. Per-class precision, recall and F1 with confusion matrices, error analysis by confusion pair and by subgroup, and calibration (reliability bins, expected calibration error, Brier score, log loss) with temperature scaling that measurably repairs over-confidence. Metrics are cross-checked against scikit-learn to a tight tolerance. On the example data: binary accuracy 0.840 with class 1 recall 0.644, one subgroup erring at 0.257 against 0.066 for another, and calibration error 0.091 → 0.046 after scaling. 93 passing tests.
+SQL and PostgreSQL analytics for AI evaluation operations — the database side of the Databricks and Seamfix work, in code. A PostgreSQL-first schema for annotators, items, annotations, reviews and model scores, with ten analytical queries a QA lead actually runs: annotator agreement with Cohen's kappa, review turnaround, reject rates by cohort, score calibration, duplicate submissions, workload and overconfidence. Runs locally on SQLite and against real PostgreSQL. On the example data: agreement 80.0% with kappa 0.643, one reviewer averaging 116.9 hours against 17.3 for the fastest, a 12.9% reject rate that runs 28.6% for juniors against 0% for seniors, and one junior 0.88 confident while agreeing only 73.3% of the time. 34 passing tests.
 
-**Tech:** Python, pandas, NumPy, scikit-learn, pytest, CLI
+**Tech:** Python, PostgreSQL, SQL, sqlite3, psycopg, pytest, CLI
 
 ---
 
