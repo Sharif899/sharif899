@@ -51,21 +51,21 @@ Offline, deterministic, rubric-based LLM evaluation — the workflow I use as an
 
 ### 3. [kyc-onboarding-service](https://github.com/Sharif899/kyc-onboarding-service)
 
-Identity verification & KYC onboarding service in Java and Spring Boot — the Seamfix stack in code. Document validation for NIN, passport and driver's licence, duplicate detection, idempotent requests, a verification workflow (PENDING → UNDER_REVIEW → VERIFIED / REJECTED / NEEDS_MORE_INFO) with a full audit log, and document numbers masked to the last 4 digits in every response and log line. 49 passing tests, verified with a live smoke test.
+Identity verification & KYC onboarding service in Java and Spring Boot — the Seamfix stack in code. Document validation for NIN, passport and driver's licence, duplicate detection, idempotent requests, a verification workflow (PENDING → UNDER_REVIEW → VERIFIED / REJECTED / NEEDS_MORE_INFO) with a full audit log, and document numbers masked to the last 4 digits in every response and log line. 54 passing tests, verified with a live smoke test.
 
 **Tech:** Java 21, Spring Boot 3, Spring Data JPA, H2, JUnit 5, MockMvc, GitHub Actions
 
 ### 4. [ai-safety-red-teaming](https://github.com/Sharif899/ai-safety-red-teaming)
 
-Offline, deterministic AI safety red-teaming toolkit — adversarial testing for LLMs, in code. Ten attack techniques (role-play, instruction override, authority and hypothetical framing, multi-step escalation, leetspeak / base64 / reversed encoding, refusal suppression), refusal classification (refusal / partial compliance / compliance), unsafe-output detection across six harm categories, and attack success rate plus a consistency score showing whether a model refused the same request every way or let one variant through. Includes a mock target model and a harness to score a real model's recorded outputs. On the example data: 50% attack success rate, 0% consistency — direct requests refused every time, role-play and encoding attacks succeeding every time. 75 passing tests.
+Offline, deterministic AI safety red-teaming toolkit — adversarial testing for LLMs, in code. Ten attack techniques (role-play, instruction override, authority and hypothetical framing, multi-step escalation, leetspeak / base64 / reversed encoding, refusal suppression), refusal classification (refusal / partial compliance / compliance), unsafe-output detection across six harm categories, and attack success rate plus a consistency score showing whether a model refused the same request every way or let one variant through. Includes a mock target model and a harness to score a real model's recorded outputs. On the example data: 50% attack success rate, 0% consistency — direct requests refused every time, role-play and encoding attacks succeeding every time. 82 passing tests.
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 5. [Archy](https://github.com/Sharif899/archy) — live at [archy.vercel.app](https://archy.vercel.app)
+### 5. [annotation-qa-toolkit](https://github.com/Sharif899/annotation-qa-toolkit)
 
-An agent-to-agent job marketplace where AI agents hire AI agents and pay in USDC on Arc Network. Client agents post jobs and lock USDC in escrow; worker agents bid; smart contracts release payment when work is approved, with on-chain reputation.
+Annotation QA for image and video labelling — the review work I do as an Annotation QA Reviewer, in code. Reads COCO, YOLO, Pascal VOC, Labelbox, SuperAnnotate and Roboflow exports into one model; runs ten QA checks (out-of-bounds and degenerate boxes, duplicates, heavy overlap, tiny boxes, empty annotations, unknown and near-duplicate class names, rare classes, orphan annotations); measures agreement between two annotators with Cohen's kappa and IoU-based box matching; and scores every image for quality. On the example data: 7 findings on one annotator's set, kappa 0.886 between the two annotators, box match rate 0.833. 88 passing tests.
 
-**Tech:** Next.js 14, TypeScript, Tailwind CSS, Supabase, Arc Network, USDC, Circle App Kit
+**Tech:** Python, standard library only, pytest, CLI
 
 ### 6. [Arc Terminal](https://github.com/Sharif899/arcterminal) — live at [arcterminal.vercel.app](https://arcterminal.vercel.app)
 
