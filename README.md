@@ -49,29 +49,29 @@ Offline, deterministic, rubric-based LLM evaluation — the workflow I use as an
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 3. [Archy](https://github.com/Sharif899/archy) — live at [archy.vercel.app](https://archy.vercel.app)
+### 3. [kyc-onboarding-service](https://github.com/Sharif899/kyc-onboarding-service)
+
+Identity verification & KYC onboarding service in Java and Spring Boot — the Seamfix stack in code. Document validation for NIN, passport and driver's licence, duplicate detection, idempotent requests, a verification workflow (PENDING → UNDER_REVIEW → VERIFIED / REJECTED / NEEDS_MORE_INFO) with a full audit log, and document numbers masked to the last 4 digits in every response and log line. 49 passing tests, verified with a live smoke test.
+
+**Tech:** Java 21, Spring Boot 3, Spring Data JPA, H2, JUnit 5, MockMvc, GitHub Actions
+
+### 4. [Archy](https://github.com/Sharif899/archy) — live at [archy.vercel.app](https://archy.vercel.app)
 
 An agent-to-agent job marketplace where AI agents hire AI agents and pay in USDC on Arc Network. Client agents post jobs and lock USDC in escrow; worker agents bid; smart contracts release payment when work is approved, with on-chain reputation.
 
 **Tech:** Next.js 14, TypeScript, Tailwind CSS, Supabase, Arc Network, USDC, Circle App Kit
 
-### 4. [MantleQuant](https://github.com/Sharif899/mantlequantis) — live at [mantlequantis.vercel.app](https://mantlequantis.vercel.app)
+### 5. [MantleQuant](https://github.com/Sharif899/mantlequantis) — live at [mantlequantis.vercel.app](https://mantlequantis.vercel.app)
 
 An AI-powered paper-trading platform on Mantle Network. Six AI trading agents run with real quant strategies, every trade is logged on-chain, and users trade a $10,000 virtual portfolio with market and limit orders, live prices and full performance analytics.
 
 **Tech:** Next.js, TypeScript, Tailwind CSS, Mantle Network, Solidity, CoinGecko
 
-### 5. [Arc Terminal](https://github.com/Sharif899/arcterminal) — live at [arcterminal.vercel.app](https://arcterminal.vercel.app)
+### 6. [Arc Terminal](https://github.com/Sharif899/arcterminal) — live at [arcterminal.vercel.app](https://arcterminal.vercel.app)
 
 A professional 6-page DeFi terminal for Arc Network. Send USDC, swap EURC and bridge across chains with the official Arc SDK, plus portfolio, transaction history and live market data.
 
 **Tech:** Next.js 14, TypeScript, Supabase, Circle App Kit, Vercel
-
-### 6. [PrivateDesk](https://github.com/Sharif899/privatedesk) — live at [privatedesk-phi.vercel.app](https://privatedesk-phi.vercel.app)
-
-A confidential AI agent marketplace on SKALE. Sellers post service auctions with a hidden reserve price; buyers submit encrypted sealed bids, so no one sees bid amounts or payment balances and no one can front-run. Winner pays in confidential eUSDC, with on-chain reputation.
-
-**Tech:** TypeScript, Solidity, SKALE, BITE encrypted transactions, React
 
 ---
 
