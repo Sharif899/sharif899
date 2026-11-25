@@ -67,11 +67,11 @@ Annotation QA for image and video labelling — the review work I do as an Annot
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 6. [Arc Terminal](https://github.com/Sharif899/arcterminal) — live at [arcterminal.vercel.app](https://arcterminal.vercel.app)
+### 6. [ml-evaluation-toolkit](https://github.com/Sharif899/ml-evaluation-toolkit)
 
-A professional 6-page DeFi terminal for Arc Network. Send USDC, swap EURC and bridge across chains with the official Arc SDK, plus portfolio, transaction history and live market data.
+Machine-learning evaluation over saved predictions — the PhD-area work, in code. Per-class precision, recall and F1 with confusion matrices, error analysis by confusion pair and by subgroup, and calibration (reliability bins, expected calibration error, Brier score, log loss) with temperature scaling that measurably repairs over-confidence. Metrics are cross-checked against scikit-learn to a tight tolerance. On the example data: binary accuracy 0.840 with class 1 recall 0.644, one subgroup erring at 0.257 against 0.066 for another, and calibration error 0.091 → 0.046 after scaling. 93 passing tests.
 
-**Tech:** Next.js 14, TypeScript, Supabase, Circle App Kit, Vercel
+**Tech:** Python, pandas, NumPy, scikit-learn, pytest, CLI
 
 ---
 
