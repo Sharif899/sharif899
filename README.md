@@ -67,11 +67,11 @@ Annotation QA for image and video labelling — the review work I do as an Annot
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 6. [sql-eval-analytics](https://github.com/Sharif899/sql-eval-analytics)
+### 6. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
 
-SQL and PostgreSQL analytics for AI evaluation operations — the database side of the Databricks and Seamfix work, in code. A PostgreSQL-first schema for annotators, items, annotations, reviews and model scores, with ten analytical queries a QA lead actually runs: annotator agreement with Cohen's kappa, review turnaround, reject rates by cohort, score calibration, duplicate submissions, workload and overconfidence. Runs locally on SQLite and against real PostgreSQL. On the example data: agreement 80.0% with kappa 0.643, one reviewer averaging 116.9 hours against 17.3 for the fastest, a 12.9% reject rate that runs 28.6% for juniors against 0% for seniors, and one junior 0.88 confident while agreeing only 73.3% of the time. 34 passing tests.
+LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas) — the client work, in code. Loads evaluation datasets from CSV or JSONL with strict validation, runs them against a configurable LLM API (keys from the environment only), and scores every response 1–5 on factual accuracy, relevance, instruction following, citation quality and safety, each with a rationale citing the evidence. Citation quality is checked against the actual source documents, so invented citations and unsupported claims are penalised. Compares two model or prompt versions with per-category deltas and item-level improvements and regressions, flags low-confidence results into a persisted human review queue, and exports Markdown and JSON reports. Ships with a CLI and a web UI over the same code paths, a 28-item sample dataset against a 10-document knowledge base, and a design report covering the scoring model, the honest limits of automated judging, and a ten-step production-hardening plan. On the sample data: the candidate model scores 4.45 against a 5.00 baseline, a 42.9-point pass-rate drop concentrated in safety and citation, with 12 regressions and none improved. 123 passing tests.
 
-**Tech:** Python, PostgreSQL, SQL, sqlite3, psycopg, pytest, CLI
+**Tech:** Python, FastAPI, SQLite, pytest, CLI
 
 ---
 
