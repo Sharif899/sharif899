@@ -67,11 +67,11 @@ LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas)
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
 
-### 6. [spark-mlflow-eval-pipeline](https://github.com/Sharif899/spark-mlflow-eval-pipeline)
+### 6. [meridian-rubric-calibration](https://github.com/Sharif899/meridian-rubric-calibration)
 
-Evaluation at distributed scale — the Spark and MLflow pipeline, in code. The same deterministic scorer (rubrics 1–5, factual checks including entity substitution and Yoruba number words, safety, pairwise comparison, Cohen's kappa, calibration) runs as pure Python, as a PySpark job over mapPartitions for large datasets, and with MLflow tracking for run comparison. On the example data: model-a averages 3.885 against model-b's 3.52, with model-b winning only on instruction following. 87 passing tests, CI green.
+Enterprise LLM rubric evaluation and calibration system built for Meridian Intelligence Systems (Seattle) — the client work, in code. Versioned rubrics for three task areas (customer support, technical troubleshooting, research grounded in reference documents) on a 0–4 scale across five dimensions (factual accuracy, evidence use, instruction following, completeness, safety), with written anchors, worked examples and a rubric revision trail. A 120-item pilot with blinded response IDs, two human graders with adjudication, and an LLM grader kept as a separate scoring source, never treated as ground truth. The human graders agree 98.0% of the time (weighted kappa 0.985); a live Gemini run graded all 240 responses and sat more than a point from the adjudicated score on 10.3% of pairs, against 1.3% for the deterministic mock — stricter on evidence use, more lenient on completeness, and passing 80% where the humans passed 66.7%. 138 passing tests, CI green.
 
-**Tech:** Python, PySpark, MLflow, pandas, pytest, CLI
+**Tech:** Python, FastAPI, SQLite, pytest, CLI
 
 ---
 
