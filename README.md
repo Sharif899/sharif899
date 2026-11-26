@@ -49,9 +49,9 @@ Offline, deterministic, rubric-based LLM evaluation — the workflow I use as an
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 3. [ai-safety-red-teaming](https://github.com/Sharif899/ai-safety-red-teaming)
+### 3. [live-red-teaming](https://github.com/Sharif899/live-red-teaming)
 
-Offline, deterministic AI safety red-teaming toolkit — adversarial testing for LLMs, in code. Ten attack techniques (role-play, instruction override, authority and hypothetical framing, multi-step escalation, leetspeak / base64 / reversed encoding, refusal suppression), refusal classification (refusal / partial compliance / compliance), unsafe-output detection across six harm categories, and attack success rate plus a consistency score showing whether a model refused the same request every way or let one variant through. Includes a mock target model and a harness to score a real model's recorded outputs. On the example data: 50% attack success rate, 0% consistency — direct requests refused every time, role-play and encoding attacks succeeding every time. 82 passing tests.
+Live red-teaming of real LLMs. The same 18 harmful requests and 10 attack techniques from my red-teaming toolkit, run against Gemini and GPT-OSS 120B over their live APIs, with no mock target anywhere. 360 live attacks, scored with a deterministic refusal classifier. Gemini lets 13.9% through, and its safety depends heavily on framing: role-play breaks it 83.3% of the time, while direct requests fail 94.4% of the time. GPT-OSS 120B refuses 99.4% of everything and holds the line across every framing. Its one counted success is a prompt it misread as a question about forgetting a passport, so its true harmful-content rate is zero. 119 passing tests, CI green.
 
 **Tech:** Python, standard library only, pytest, CLI
 
