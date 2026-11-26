@@ -55,23 +55,23 @@ Offline, deterministic AI safety red-teaming toolkit — adversarial testing for
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 4. [annotation-qa-toolkit](https://github.com/Sharif899/annotation-qa-toolkit)
-
-Annotation QA for image and video labelling — the review work I do as an Annotation QA Reviewer, in code. Reads COCO, YOLO, Pascal VOC, Labelbox, SuperAnnotate and Roboflow exports into one model; runs ten QA checks (out-of-bounds and degenerate boxes, duplicates, heavy overlap, tiny boxes, empty annotations, unknown and near-duplicate class names, rare classes, orphan annotations); measures agreement between two annotators with Cohen's kappa and IoU-based box matching; and scores every image for quality. On the example data: 7 findings on one annotator's set, kappa 0.886 between the two annotators, box match rate 0.833. 88 passing tests.
-
-**Tech:** Python, standard library only, pytest, CLI
-
-### 5. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
+### 4. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
 
 LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas) — the client work, in code. Loads evaluation datasets from CSV or JSONL with strict validation, runs them against a configurable LLM API (keys from the environment only), and scores every response 1–5 on factual accuracy, relevance, instruction following, citation quality and safety, each with a rationale citing the evidence. Citation quality is checked against the actual source documents, so invented citations and unsupported claims are penalised. Compares two model or prompt versions with per-category deltas and item-level improvements and regressions, flags low-confidence results into a persisted human review queue, and exports Markdown and JSON reports. Ships with a CLI and a web UI over the same code paths, a 28-item sample dataset against a 10-document knowledge base, and a design report covering the scoring model, the honest limits of automated judging, and a ten-step production-hardening plan. A live Gemini provider is now built in, and a live run on the sample data (gemini-3.5-flash-lite, 28 items, no mocks) scores 4.39 with a 64.3% pass rate — better than the sloppy mock on citations and refusals, weaker on unanswerable items, where it guessed twice and invented a citation. Of its 10 flagged items only 2 are real model errors; the other 8 are the deterministic scorer misreading correct answers, which is now the calibration work. 131 passing tests, CI green.
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
 
-### 6. [meridian-rubric-calibration](https://github.com/Sharif899/meridian-rubric-calibration)
+### 5. [meridian-rubric-calibration](https://github.com/Sharif899/meridian-rubric-calibration)
 
 Enterprise LLM rubric evaluation and calibration system built for Meridian Intelligence Systems (Seattle) — the client work, in code. Versioned rubrics for three task areas (customer support, technical troubleshooting, research grounded in reference documents) on a 0–4 scale across five dimensions (factual accuracy, evidence use, instruction following, completeness, safety), with written anchors, worked examples and a rubric revision trail. A 120-item pilot with blinded response IDs, two human graders with adjudication, and an LLM grader kept as a separate scoring source, never treated as ground truth. The human graders agree 98.0% of the time (weighted kappa 0.985); a live Gemini run graded all 240 responses and sat more than a point from the adjudicated score on 10.3% of pairs, against 1.3% for the deterministic mock — stricter on evidence use, more lenient on completeness, and passing 80% where the humans passed 66.7%. 138 passing tests, CI green.
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
+
+### 6. [llm-eval-leaderboard](https://github.com/Sharif899/llm-eval-leaderboard)
+
+A public leaderboard of live LLM evaluation results, not another toolkit. Two real models run against 100 items, 60 from my Yoruba benchmark and 40 new general items, and every number comes from a live API call with the raw response saved. Gemini 3.5 Flash Lite scores 3.820 with a 49.0% pass rate; GPT-OSS 120B scores 3.804 with a 47.0% pass rate, effectively tied, with 95% confidence intervals on every mean. Both models refused all 20 harmful requests. The runner is resumable and reproducible, the scorer is a deterministic five-criterion rubric, and the table is generated from the scored results, never hand-edited. 65 passing tests, CI green.
+
+**Tech:** Python, standard library only, pytest, CLI
 
 ---
 
