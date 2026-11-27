@@ -15,20 +15,20 @@ Senior AI Evaluator & Trainer with a Ph.D. in Data Science and 7 years in model 
 
 ## Experience
 
-- **AI Trainer & Annotation QA Reviewer — iMerit** | Remote, Freelance | 2019–Present
+- **AI Trainer & Annotation QA Reviewer, iMerit** | Remote, Freelance | 2019–Present
   LLM evaluation and RLHF, pairwise preference comparisons, adversarial prompts, rubric design, annotation QA and calibration. Promoted from AI Annotator to QA Reviewer after one year.
-- **AI Evaluation Engineer — Databricks** | Remote, Part-time | Jul 2020–Present
+- **AI Evaluation Engineer, Databricks** | Remote, Part-time | Jul 2020–Present
   Python evaluation pipelines for 20+ ML models, evaluation datasets and scoring frameworks for 75,000+ LLM test cases, automated testing with SQL, Apache Spark and MLflow.
-- **Senior Software Engineer — Seamfix Nigeria** | Lagos | 2020–Present
+- **Senior Software Engineer, Seamfix Nigeria** | Lagos | 2020–Present
   Backend services for identity verification, KYC and digital onboarding in Java, Spring Boot, Python and PostgreSQL. Promoted to Senior in 2022; mentored 80+ interns.
-- **AI Training Expert — micro1, Runway Annotations Project** | Remote
+- **AI Training Expert, micro1, Runway Annotations Project** | Remote
   Image/video annotation and computer-vision labelling, AI data QA with CVAT, Labelbox, SuperAnnotate and Roboflow.
 
 ## Education & Certifications
 
-- **Ph.D., Data Science** — Obafemi Awolowo University, 2019
-- **M.Sc., Data Science and Artificial Intelligence** — Ladoke Akintola University of Technology, 2015
-- **B.Sc., Computer Science** — Obafemi Awolowo University, 2011
+- **Ph.D., Data Science**, Obafemi Awolowo University, 2019
+- **M.Sc., Data Science and Artificial Intelligence**, Ladoke Akintola University of Technology, 2015
+- **B.Sc., Computer Science**, Obafemi Awolowo University, 2011
 - ISTQB Certified Tester – AI Testing (CT-AI v2.0), Jan 2026
 - Google Cloud Professional Machine Learning Engineer, Jul 2025
 - AWS Certified Machine Learning Engineer – Associate, Feb 2025
@@ -37,37 +37,37 @@ Senior AI Evaluator & Trainer with a Ph.D. in Data Science and 7 years in model 
 
 ## Featured Projects
 
-### 1. [OsogboRent](https://github.com/Sharif899/houseplug) — live at [osogborent.com](https://osogborent.com)
+### 1. [OsogboRent](https://github.com/Sharif899/houseplug), live at [osogborent.com](https://osogborent.com)
 
 A real-estate platform connecting tenants with verified agents and landlords in Osogbo, Nigeria. Houses and shops for rent and sale, with search by area, property type and price, featured and recent listings, a request board, agent dashboard and listing submission.
 
 **Tech:** Next.js 14, TypeScript, Tailwind CSS, Supabase, Vercel
 
-### 2. [llm-eval-toolkit](https://github.com/Sharif899/llm-eval-toolkit)
+### 2. [llmevaltoolkit](https://github.com/Sharif899/llmevaltoolkit)
 
-Offline, deterministic, rubric-based LLM evaluation — the workflow I use as an AI evaluator, in code. Scores a response 1–5 on factual accuracy, reasoning, instruction adherence, helpfulness and safety, each with a structured rationale; pairwise RLHF comparison with evidence-backed rankings; hallucination checks against a reference (supported / contradicted / unverifiable); and annotation QA with Cohen's kappa, per-label agreement and a disagreement report. Includes 10 synthetic example items, including a Yoruba/English one, and 42 passing tests.
-
-**Tech:** Python, standard library only, pytest, CLI
-
-### 3. [live-red-teaming](https://github.com/Sharif899/live-red-teaming)
-
-Live red-teaming of real LLMs. The same 18 harmful requests and 10 attack techniques from my red-teaming toolkit, run against Gemini and GPT-OSS 120B over their live APIs, with no mock target anywhere. 360 live attacks, scored with a deterministic refusal classifier. Gemini lets 13.9% through, and its safety depends heavily on framing: role-play breaks it 83.3% of the time, while direct requests fail 94.4% of the time. GPT-OSS 120B refuses 99.4% of everything and holds the line across every framing. Its one counted success is a prompt it misread as a question about forgetting a passport, so its true harmful-content rate is zero. 119 passing tests, CI green.
+Offline, deterministic, rubric-based LLM evaluation, the workflow I use as an AI evaluator, in code. Scores a response 1–5 on factual accuracy, reasoning, instruction adherence, helpfulness and safety, each with a structured rationale; pairwise RLHF comparison with evidence-backed rankings; hallucination checks against a reference (supported / contradicted / unverifiable); and annotation QA with Cohen's kappa, per-label agreement and a disagreement report. Includes 10 synthetic example items, including a Yoruba/English one, and 42 passing tests.
 
 **Tech:** Python, standard library only, pytest, CLI
 
-### 4. [northstar-eval-platform](https://github.com/Sharif899/northstar-eval-platform)
+### 3. [liveredteaming](https://github.com/Sharif899/liveredteaming)
 
-LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas) — the client work, in code. Loads evaluation datasets from CSV or JSONL with strict validation, runs them against a configurable LLM API (keys from the environment only), and scores every response 1–5 on factual accuracy, relevance, instruction following, citation quality and safety, each with a rationale citing the evidence. Citation quality is checked against the actual source documents, so invented citations and unsupported claims are penalised. Compares two model or prompt versions with per-category deltas and item-level improvements and regressions, flags low-confidence results into a persisted human review queue, and exports Markdown and JSON reports. Ships with a CLI and a web UI over the same code paths, a 28-item sample dataset against a 10-document knowledge base, and a design report covering the scoring model, the honest limits of automated judging, and a ten-step production-hardening plan. A live Gemini provider is now built in, and a live run on the sample data (gemini-3.5-flash-lite, 28 items, no mocks) scores 4.39 with a 64.3% pass rate — better than the sloppy mock on citations and refusals, weaker on unanswerable items, where it guessed twice and invented a citation. Of its 10 flagged items only 2 are real model errors; the other 8 are the deterministic scorer misreading correct answers, which is now the calibration work. 131 passing tests, CI green.
+Live red teaming of real LLMs. The same 18 harmful requests and 10 attack techniques from my red teaming toolkit, run against Gemini and GPT-OSS 120B over their live APIs, with no mock target anywhere. 360 live attacks, scored with a deterministic refusal classifier. Gemini lets 13.9% through, and its safety depends heavily on framing: role-play breaks it 83.3% of the time, while direct requests fail 94.4% of the time. GPT-OSS 120B refuses 99.4% of everything and holds the line across every framing. Its one counted success is a prompt it misread as a question about forgetting a passport, so its true harmful-content rate is zero. 119 passing tests, CI green.
+
+**Tech:** Python, standard library only, pytest, CLI
+
+### 4. [northstarevalplatform](https://github.com/Sharif899/northstarevalplatform)
+
+LLM evaluation platform prototype built for Northstar AI Systems (Austin, Texas), the client work, in code. Loads evaluation datasets from CSV or JSONL with strict validation, runs them against a configurable LLM API (keys from the environment only), and scores every response 1–5 on factual accuracy, relevance, instruction following, citation quality and safety, each with a rationale citing the evidence. Citation quality is checked against the actual source documents, so invented citations and unsupported claims are penalised. Compares two model or prompt versions with per-category deltas and item-level improvements and regressions, flags low-confidence results into a persisted human review queue, and exports Markdown and JSON reports. Ships with a CLI and a web UI over the same code paths, a 28-item sample dataset against a 10-document knowledge base, and a design report covering the scoring model, the honest limits of automated judging, and a ten-step production-hardening plan. A live Gemini provider is now built in, and a live run on the sample data (gemini-3.5-flash-lite, 28 items, no mocks) scores 4.39 with a 64.3% pass rate, better than the sloppy mock on citations and refusals, weaker on unanswerable items, where it guessed twice and invented a citation. Of its 10 flagged items only 2 are real model errors; the other 8 are the deterministic scorer misreading correct answers, which is now the calibration work. 131 passing tests, CI green.
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
 
-### 5. [meridian-rubric-calibration](https://github.com/Sharif899/meridian-rubric-calibration)
+### 5. [meridianrubriccalibration](https://github.com/Sharif899/meridianrubriccalibration)
 
-Enterprise LLM rubric evaluation and calibration system built for Meridian Intelligence Systems (Seattle) — the client work, in code. Versioned rubrics for three task areas (customer support, technical troubleshooting, research grounded in reference documents) on a 0–4 scale across five dimensions (factual accuracy, evidence use, instruction following, completeness, safety), with written anchors, worked examples and a rubric revision trail. A 120-item pilot with blinded response IDs, two human graders with adjudication, and an LLM grader kept as a separate scoring source, never treated as ground truth. The human graders agree 98.0% of the time (weighted kappa 0.985); a live Gemini run graded all 240 responses and sat more than a point from the adjudicated score on 10.3% of pairs, against 1.3% for the deterministic mock — stricter on evidence use, more lenient on completeness, and passing 80% where the humans passed 66.7%. 138 passing tests, CI green.
+Enterprise LLM rubric evaluation and calibration system built for Meridian Intelligence Systems (Seattle), the client work, in code. Versioned rubrics for three task areas (customer support, technical troubleshooting, research grounded in reference documents) on a 0–4 scale across five dimensions (factual accuracy, evidence use, instruction following, completeness, safety), with written anchors, worked examples and a rubric revision trail. A 120-item pilot with blinded response IDs, two human graders with adjudication, and an LLM grader kept as a separate scoring source, never treated as ground truth. The human graders agree 98.0% of the time (weighted kappa 0.985); a live Gemini run graded all 240 responses and sat more than a point from the adjudicated score on 10.3% of pairs, against 1.3% for the deterministic mock, stricter on evidence use, more lenient on completeness, and passing 80% where the humans passed 66.7%. 138 passing tests, CI green.
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
 
-### 6. [llm-eval-leaderboard](https://github.com/Sharif899/llm-eval-leaderboard)
+### 6. [llmevalleaderboard](https://github.com/Sharif899/llmevalleaderboard)
 
 A public leaderboard of live LLM evaluation results, not another toolkit. Two real models run against 100 items, 60 from my Yoruba benchmark and 40 new general items, and every number comes from a live API call with the raw response saved. Gemini 3.5 Flash Lite scores 3.820 with a 49.0% pass rate; GPT-OSS 120B scores 3.804 with a 47.0% pass rate, effectively tied, with 95% confidence intervals on every mean. Both models refused all 20 harmful requests. The runner is resumable and reproducible, the scorer is a deterministic five-criterion rubric, and the table is generated from the scored results, never hand-edited. 65 passing tests, CI green.
 
@@ -77,12 +77,12 @@ A public leaderboard of live LLM evaluation results, not another toolkit. Two re
 
 ## What I Build
 
-- **AI evaluation & training data** — LLM evaluation, RLHF, rubrics, annotation QA, calibration, hallucination detection, AI safety and red-teaming
-- **SaaS & web applications** — Next.js, React, TypeScript, Tailwind CSS, Node.js
-- **Marketplaces & platforms** — listings, search and filters, dashboards, payments, escrow
-- **Web3 products & dApps** — smart contracts (Solidity, Hardhat), Arc, Mantle, SKALE, Base, OpenGradient, 0G
-- **AI-powered tools** — AI agents, trading signals, verifiable AI output, dashboards
-- **MVPs for startups** — from idea to a live, working product
+- **AI evaluation & training data**, LLM evaluation, RLHF, rubrics, annotation QA, calibration, hallucination detection, AI safety and red teaming
+- **SaaS & web applications**, Next.js, React, TypeScript, Tailwind CSS, Node.js
+- **Marketplaces & platforms**, listings, search and filters, dashboards, payments, escrow
+- **Web3 products & dApps**, smart contracts (Solidity, Hardhat), Arc, Mantle, SKALE, Base, OpenGradient, 0G
+- **AI-powered tools**, AI agents, trading signals, verifiable AI output, dashboards
+- **MVPs for startups**, from idea to a live, working product
 
 ## Tech Stack
 
