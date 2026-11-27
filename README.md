@@ -67,11 +67,11 @@ Enterprise LLM rubric evaluation and calibration system built for Meridian Intel
 
 **Tech:** Python, FastAPI, SQLite, pytest, CLI
 
-### 6. [llmevalleaderboard](https://github.com/Sharif899/llmevalleaderboard)
+### 6. [productionevalplatform](https://github.com/Sharif899/productionevalplatform)
 
-A public leaderboard of live LLM evaluation results, not another toolkit. Two real models run against 100 items, 60 from my Yoruba benchmark and 40 new general items, and every number comes from a live API call with the raw response saved. Gemini 3.5 Flash Lite scores 3.820 with a 49.0% pass rate; GPT-OSS 120B scores 3.804 with a 47.0% pass rate, effectively tied, with 95% confidence intervals on every mean. Both models refused all 20 harmful requests. The runner is resumable and reproducible, the scorer is a deterministic five-criterion rubric, and the table is generated from the scored results, never hand-edited. 65 passing tests, CI green.
+A multitenant AI evaluation platform in Python, built from the Northstar prototype design into a secure, production-ready system. Teams create versioned evaluation suites, run them against approved model endpoints in background workers, review failures with model identity hidden, compare versions, and decide whether a model or prompt change is safe to release. Every row carries an organisation id and every query filters by it, so one organisation can never see another organisation's data. Versioned datasets, rubrics, prompt configs and suites carry SHA256 content hashes, and a run pins the exact versions it started with, so an edit can never silently change a completed evaluation. Runs support queueing, progress updates, cancellation, per-item timeouts, retries with backoff, resumable execution, idempotency keys, per-endpoint rate limits and per-run budget caps. An LLM grader may suggest scores, but suggestions are stored separately and never override a human judgment. A configurable release gate blocks a candidate for critical failures even when its average score is high, and overrides are audit logged. The provider client is a real OpenAI-compatible chat completions client with no mock models anywhere; tests use recorded responses from a local stub server and run fully offline. 58 passing tests, CI green.
 
-**Tech:** Python, standard library only, pytest, CLI
+**Tech:** Python 3.12, FastAPI, SQLite, pytest, CLI
 
 ---
 
