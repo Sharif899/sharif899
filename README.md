@@ -43,11 +43,11 @@ A real-estate platform connecting tenants with verified agents and landlords in 
 
 **Tech:** Next.js 14, TypeScript, Tailwind CSS, Supabase, Vercel
 
-### 2. [llmevaltoolkit](https://github.com/Sharif899/llmevaltoolkit)
+### 2. [productionbackend](https://github.com/Sharif899/productionbackend)
 
-Offline, deterministic, rubric-based LLM evaluation, the workflow I use as an AI evaluator, in code. Scores a response 1–5 on factual accuracy, reasoning, instruction adherence, helpfulness and safety, each with a structured rationale; pairwise RLHF comparison with evidence-backed rankings; hallucination checks against a reference (supported / contradicted / unverifiable); and annotation QA with Cohen's kappa, per-label agreement and a disagreement report. Includes 10 synthetic example items, including a Yoruba/English one, and 42 passing tests.
+Production-grade order and payment processing API in Java and Spring Boot, built the way a real service has to behave. Create an order with an idempotency key and replaying the same key returns the stored response instead of charging twice; a duplicate client reference is rejected with 409; requests are rate limited at 100 per minute with 429 and retry headers; every response carries a structured error envelope. PostgreSQL through Flyway migrations, Redis caching when configured, a runtime-only Docker image with a non-root user, and a compose file for the whole stack. 52 passing tests, CI green, and a measured load test of 176 requests per second at p95 111 ms with zero errors on a small shared VM.
 
-**Tech:** Python, standard library only, pytest, CLI
+**Tech:** Java 21, Spring Boot 3.3.5, PostgreSQL, Flyway, Redis, Docker, JUnit, MockMvc
 
 ### 3. [liveredteaming](https://github.com/Sharif899/liveredteaming)
 
